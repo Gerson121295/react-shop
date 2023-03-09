@@ -1,0 +1,11 @@
+//configuracion para trabajar con Sass
+
+$base-color: #ff0000;
+$color: rgba(black, 0.88); //color, opacidad
+
+//De esta foma se asigna la variables que previamente se asigno
+//Y con eso trabajar un archivo de Saas dentro de nuestro proyecto.
+body{
+    background-color: $base-color;
+    color: $color;
+}

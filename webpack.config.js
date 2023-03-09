@@ -1,5 +1,7 @@
+
 const path = require('path'); //saber donde vamos a trabajar, ubicacion del proyecto "nuestra PC o de otra persona"
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js', //donde esta el punto de entrada de nuestra App. estará en src/y usara el archivo principal index.js
@@ -27,14 +29,32 @@ module.exports = {
                         loader: 'html-loader',
                     }
                 ]
+            },
+            {
+                test: /\.s[ac]ss$/i,   //dientificar_los_archivos_que_vamos a estar trabajando, se usa una regla para identificarlo CSS u otro
+                use:[ //add configuracion para trabajar con los loaders
+                    "style-loader",  // Creates `style` nodes from JS strings
+                    "css-loader",  // Translates CSS into CommonJS
+                    "sass-loader",  // Compiles Sass to CSS
+                ],
             }
         ]
     },
-    plugins:[
+    plugins:[ //se agrega los plugins
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: './index.html'
         }),
-    ]
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
+    ],
+    devServer:{ //configuracion para trabajar en modo desarrollo para que el servidor funcione. funcione el entorno local
+        static:{
+            directory: path.join(__dirname, 'public'),  //donde trabaja el proyecto
+        },
+    compress: true,
+    port:9000, //puerto  a usar:  entre los permitidos para exponer el proyecto: el 3000 o 3005 
+    },
 }
 

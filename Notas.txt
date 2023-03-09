@@ -1,0 +1,36 @@
+
+*******  Instalaciones y configuracion   *******
+
+* Crear carpeta para almacenar la App: mkdir react-shop
+Ejecutar:
+git init
+npm init    //dar datos de conf. Entry point: (index.js) src/index.js Licencse: MIT, autor Gerson Ep <correo>
+npm install react react-dom
+
+code.  //para ir a VSC y crear estructura: (public/index.js), (src(components:App.jsx), index.js).
+
+Instalamos webpack para el bundle de la app, y babel para que el código sirva en cualquier navegador
+npm install @babel/core @babel/preset-env @babel/preset-react 
+npm install webpack webpack-cli webpack-dev-server 
+npm install babel-loader html-loader html-webpack-plugin
+
+agregar archivos:
+.gitignore  //ignorar archivos como carpeta: node_modules
+.babelrc  //para que babel reconozca los preset que se agregaron.
+webpack.config.js //configuración de webpack permite preparar nuestro proyecto de forma personalizada.
+
+Instalar opcional si da error// no lo instale 
+npm install css-loader
+npm install  -g sass
+npm i mini-css-extract-plugin
+npm install style-loader --save
+
+
+7 - Agregar estilos: React con CSS y Sass
+Instalar en terminal de VSC
+npm install mini-css-extract-plugin css-loader style-loader sass -D
+npm install sass-loader -D 
+--MiniCssExtractPlugin - agrega la configuracion en archivo: webpack.config.js 
+
+
+

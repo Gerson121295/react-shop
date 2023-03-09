@@ -1,6 +1,7 @@
 
   //rafce --importa react y crea el componente //imr importa react
-import React from 'react'
+import React from 'react';
+import '../styles/global.scss';
 
 const App = () => {
   return (
