@@ -7,6 +7,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),   //dis, puede ser otro nombre, como main
         filename: 'bundle.js', //nombre del empaquetado que se va a crear
     },
+    mode: 'development', //trabajar en modo desarrollador en esta configuracion
     resolve: {
         extensions: ['.js','.jsx'],
     },
