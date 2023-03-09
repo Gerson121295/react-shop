@@ -1,0 +1,6 @@
+{
+    "presets": [
+        "@babel/preset-env",  //compila Emac 5, 6 y todo de JavaScript moderno
+        "@babel/preset-react" //Trabaja con toda la sintaxis de react JS
+    ]
+}
