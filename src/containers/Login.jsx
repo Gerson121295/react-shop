@@ -1,6 +1,6 @@
 import React from 'react'; //imr
 import '../styles/Login.scss';
-import logo from '../asset/pictures/logo_yard_sale.svg';
+import logo from '../asset/logos/logo_yard_sale.svg';
 
 const Login = () => { //rafc
   return (

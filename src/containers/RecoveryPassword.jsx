@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/RecoveryPassword.scss';
 //shortcut: rafc //importa react y crea un componente
-import logo from '../asset/pictures/logo_yard_sale.svg';
+import logo from '../asset/logos/logo_yard_sale.svg';
 
 import IconEmail from '../asset/icons/email.svg';
 

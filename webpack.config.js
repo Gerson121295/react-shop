@@ -8,6 +8,7 @@ module.exports = {
     output: { //donde va a vivir el proyecto cuando este preparado
         path: path.resolve(__dirname, 'dist'),   //dis, puede ser otro nombre, como main
         filename: 'bundle.js', //nombre del empaquetado que se va a crear
+        publicPath: '/'  //para las rutas.
     },
     mode: 'development', //trabajar en modo desarrollador en esta configuracion
     resolve: {
@@ -57,12 +58,18 @@ module.exports = {
             filename: '[name].css'
         }),
     ],
-    devServer:{ //configuracion para trabajar en modo desarrollo para que el servidor funcione. funcione el entorno local
+     devServer:{ //configuracion para trabajar en modo desarrollo para que el servidor funcione. funcione el entorno local
         static:{
             directory: path.join(__dirname, 'public'),  //donde trabaja el proyecto
         },
     compress: true,
     port:9000, //puerto  a usar:  entre los permitidos para exponer el proyecto: el 3000 o 3005 
-    },
+    historyApiFallback: true,
+    } 
+
+   /*  devServer: {
+		historyApiFallback: true,
+	} */
+
 }
 
