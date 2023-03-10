@@ -16,6 +16,14 @@ module.exports = {
     module:{
         rules:[
             {
+                test: /\.(png|jpg|svg|jpeg|webp)$/,/* Test agrega la expresion regular para procesar los diferentes tipos de imagenes que tengas */
+                type:'asset/resource',
+                generator:{
+                    filename: 'assets/pictures/[hash][ext]',/* Carpeta que guarde las imagenes, [hash] para evitar problemas con el cache, [ext] referencia a la extencion del archivo procesado. */
+                }
+            },
+
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/, //no quiero que lea modules
                 use:{
@@ -31,7 +39,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.s[ac]ss$/i,   //dientificar_los_archivos_que_vamos a estar trabajando, se usa una regla para identificarlo CSS u otro
+                test: /\.(css|scss)$/,   //dientificar_los_archivos_que_vamos a estar trabajando, se usa una regla para identificarlo CSS u otro
                 use:[ //add configuracion para trabajar con los loaders
                     "style-loader",  // Creates `style` nodes from JS strings
                     "css-loader",  // Translates CSS into CommonJS

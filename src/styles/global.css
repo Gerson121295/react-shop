@@ -1,0 +1,27 @@
+/* configuracion para trabajar con Sass
+Los estilos los podemos trabajar con Sass ".scss" o con CSS ".css"
+ */
+/* //----------------------------------------------------
+Ejemplo de trabajar con Sass */
+/* $base-color: #ff0000;
+$color: rgba(black, 0.88);  */  /* /color, opacidad */
+
+/* De esta foma se asigna la variables que previamente se asigno
+Y con eso trabajar un archivo de Saas dentro de nuestro proyecto.
+ */
+
+/* body{
+    background-color: $base-color;
+    color: $color;
+} */
+/* //----------------------------------------------------
+ */
+/* Estilos Globales para la App */
+
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+
+
