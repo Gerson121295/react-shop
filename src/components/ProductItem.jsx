@@ -6,11 +6,12 @@ const ProductItem = () => {
 
 		//trabajar el estado dentro de React usando HOOK
 //const 2 valores 1er es el estado el 2 es una funcion modificadora del 1 elemento del estado, y en useState se pasa el valor inicial de cart(1) puede ir un string '', true, 0, o un objeto {}, o arreglo [] 
-const [cart, setCart] = useState('hola');// '' reciba un string. - un arreglo para listar multiples elementos que van a estar dentro de la estructura.
+const [cart, setCart] = useState([]);// 'hola' reciba un string. - un arreglo para listar multiples elementos que van a estar dentro de la estructura.
 
 //trabajar con el valor de set: modificar el html para que al darle clic desencadene el llamdo 
 const handleClick = () => { //esta funcion modifica el estado, es llamada desde el html figure
-	setCart('Hola Mundo');
+	/* setCart('Hola Mundo'); */
+	setCart([]);
 }
 
   return (
@@ -24,7 +25,7 @@ const handleClick = () => { //esta funcion modifica el estado, es llamada desde 
 				<figure onClick={handleClick}> {/* onClick para escuchar el clic, llame a la funcion handleClick */}
 				<img src={BTaddToCard} alt="" />
 				</figure>
-				{cart} {/* llamada de cart */}
+				{/* {cart}  llamada de cart */}
 			</div>
 		</div>
   )
