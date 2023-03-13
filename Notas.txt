@@ -35,6 +35,11 @@ npm install sass-loader -D
 10 - Instalar React Router DOM -- para las Rutas
 npm install react-router-dom
 
+19- Instalar Axios: npm install axios  //para realizar peticiones al API.
+-- Actual trabajo con React V18.2 y al parecer no es necesario instalar el plugin de babel siguiente, solo si se trabaja con versiones de react < 18
+instalar plugin de babel para peticiones en axios, luego editar archivo .babelrc: add plugins 
+npm install @babel/plugin-transform-runtime
+
 
 
 

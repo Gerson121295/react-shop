@@ -3,4 +3,11 @@
         "@babel/preset-env",  //compila Emac 5, 6 y todo de JavaScript moderno
         "@babel/preset-react" //Trabaja con toda la sintaxis de react JS
     ]
+    //plugin para que al hacer peticiones con axios a una API no se rompa la App
+  /*
+     ,
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ] 
+    */
 }
