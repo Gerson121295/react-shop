@@ -1,6 +1,6 @@
 import React from 'react'; //imr
-import '../styles/Login.scss';
-import Logo from '../asset/logos/logo_yard_sale.svg';
+import '@styles/Login.scss';
+import Logo from '@logos/logo_yard_sale.svg';
 
 const Login = () => { //rafc
   return (
@@ -11,7 +11,8 @@ const Login = () => { //rafc
  
     <div className="Login">
     <div className="Login-container">
-        <img src={Logo} alt="logo" className="logo" />
+       {/*  <img src={Logo} alt="logo" className="logo" /> */}
+       <img src={Logo} alt="logo" className="logo-login" />
         <form action="/" className="form">
             <label htmlFor="email" className="label">Email address</label>
             <input type="text" id="email" placeholder="platzi@example.cm" className="input input-email" />

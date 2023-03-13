@@ -1,8 +1,15 @@
 import React from 'react'
-import '../styles/Header.scss'
-import Logo from '../asset/logos/logo_yard_sale.svg';
-import IconMenu from '../asset/icons/icon_menu.svg';
-import IconShoppingCart from '../asset/icons/icon_shopping_cart.svg';
+/* import '../styles/Header.scss' */
+import '@styles/Header.scss'; //ya agregado el alias en webapp.config
+/* import Logo from '../asset/logos/logo_yard_sale.svg';
+import IconMenu from '../asset/icons/icon_menu.svg'; */
+/* import IconShoppingCart from '../asset/icons/icon_shopping_cart.svg'; */
+//estas variables debido a que se agrego el alias de la ruta icons y logos en webpack.config
+
+import IconMenu from '@icons/icon_menu.svg';
+import logo from  '@logos/logo_yard_sale.svg';
+import  IconShoppingCart from  '@icons/icon_shopping_cart.svg' 
+/* const IconShoppingCart = '@icons/icon_shopping_cart.svg' */ /* const solo es para url o una constante */
 
 const Header = () => {
   return (
@@ -11,7 +18,8 @@ const Header = () => {
         <img src={IconMenu} alt="menu" className="menu" />
       <div className="navbar-left">
         {/* <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" /> */}
-        <img src={Logo} alt="logo" className="logo" />
+       {/*  <img src={Logo} alt="logo" className="logo" /> */}
+            <img src={logo} alt="logo" className="nav-logo" />
         <ul>
           <li>
             <a href="/">All</a>

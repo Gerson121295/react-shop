@@ -8,7 +8,7 @@ import Header from '../components/Header';
 const Layout = ({children}) => { //llama a children
   return (
   <div className="Layout"> {/* puede tener la estructura base de nuestro proyecto */}
-    <header />    {/* Este no estaba -presenta el componente Header */}
+    <Header />    {/* Este no estaba -presenta el componente Header */}
     {children} {/*  recibe un hijo, va a recibir varios componentes y van a vivir aqui de forma ordenada  */}
 
   </div>

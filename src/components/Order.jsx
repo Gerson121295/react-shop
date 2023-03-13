@@ -1,6 +1,9 @@
 import React from 'react';
-import '../styles/Order.scss';
-import flexita from '../asset/icons/flechita.svg';
+/* import '../styles/Order.scss'; */
+import '@styles/Order.scss';
+/*  import flexita from '../asset/icons/flechita.svg';  */
+
+import flexita from '@icons/flechita.svg'; 
 
 const Order = () => {
   return (

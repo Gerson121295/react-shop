@@ -13,16 +13,23 @@ module.exports = {
     mode: 'development', //trabajar en modo desarrollador en esta configuracion
     resolve: {
         extensions: ['.js','.jsx'],
+        alias: { //para imagenes y no agregar la ruta de las carpetas e importarla, si no su alias
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@icons': path.resolve(__dirname, 'src/asset/icons/'),
+            '@logos': path.resolve(__dirname, 'src/asset/logos/'),
+        }
     },
     module:{
         rules:[
-            {
-                test: /\.(png|jpg|svg|jpeg|webp)$/,/* Test agrega la expresion regular para procesar los diferentes tipos de imagenes que tengas */
-                type:'asset/resource',
-                generator:{
-                    filename: 'assets/pictures/[hash][ext]',/* Carpeta que guarde las imagenes, [hash] para evitar problemas con el cache, [ext] referencia a la extencion del archivo procesado. */
-                }
-            },
+         //     {
+         //       test: /\.(png|jpg|svg|jpeg|webp)$/,/* Test agrega la expresion regular para procesar los diferentes tipos de imagenes que tengas */
+         //       type:'asset/resource',
+         //       generator:{
+        //        filename: 'assets/pictures/[hash][ext]',/* Carpeta que guarde las imagenes, [hash] para evitar problemas con el cache, [ext] referencia a la extencion del archivo procesado. */
+        //      }
+        //     }, 
 
             {
                 test: /\.(js|jsx)$/,
@@ -46,6 +53,10 @@ module.exports = {
                     "css-loader",  // Translates CSS into CommonJS
                     "sass-loader",  // Compiles Sass to CSS
                 ],
+            },
+            {
+                test:  /\.(png|svg|jpg|gig|jpeg)$/,  // tipo de archivos que acepta
+                type: 'asset'
             }
         ]
     },

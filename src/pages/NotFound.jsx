@@ -1,7 +1,7 @@
 
 import React from 'react'
-import '../styles/NotFound.css'
-import NoEncontrado from '../asset/icons/robot-404-error.svg';
+import '@styles/NotFound.css'
+import NoEncontrado from '@icons/robot-404-error.svg';
 
 const NotFound = () => {
   return (
