@@ -16,10 +16,20 @@ import Checkout from '../pages/Checkout';
 import Orders from '../pages/Orders';
 //import RecoveryPassword from '../containers/RecoveryPassword';
 import NotFound from '../pages/NotFound';
+import AppContext from '../context/AppContext';
+import useInitialState from '../hooks/useInitialStage'; //para el contexto
+
 import '@styles/global.css';
 
 const App = () => {
+
+  const initialState = useInitialState(); /* initialState = al custom hook, todo lo que retorna el contexto useInitialState, todo ese recurso se comparte al provider*/
+
   return (
+
+    /* Para poder proveer del contexto se utiliza el método provider del componente que hemos creado con el contexto (AppContext) */
+    <AppContext.Provider value={initialState}> 
+
     <BrowserRouter>
       <Layout> {/* van a vivir los hijos de Layout */}
         <Routes> {/* Switch */}       
@@ -36,6 +46,8 @@ const App = () => {
         </Routes>
       </Layout>
     </BrowserRouter>
+    </AppContext.Provider>
+
   );
 }
 export default App
