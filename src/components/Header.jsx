@@ -3,6 +3,7 @@ import React, {useState, useContext} from 'react'; //useState y useContext son H
 import '@styles/Header.scss'; //ya agregado el alias en webapp.config
 import Menu from '@components/Menu';
 import AppContext from '../context/AppContext';
+import MyOrder from '../containers/MyOrder';
 /* import Logo from '../asset/logos/logo_yard_sale.svg';
 import IconMenu from '../asset/icons/icon_menu.svg'; */
 /* import IconShoppingCart from '../asset/icons/icon_shopping_cart.svg'; */
@@ -16,7 +17,8 @@ import  IconShoppingCart from  '@icons/icon_shopping_cart.svg'
 const Header = () => {
 
   const [toggle, setToggle] = useState(false); //const tiene 2 valores el 1er.valor que tiene el estado, 2valor modificar al 1er valor y useState es el valor inical o inicaliza el 1er.valor, tiene false para que no se visualise el menu. toggle es un nombre pero JS activa o desactiva al dar clic
- /*  const {state} = useContext(AppContext); */// para conectar la App con useContext
+  const [toggleOrders, setToggleOrders] = useState(false); //my orders para mostrar el menu
+  /*  const {state} = useContext(AppContext); */// para conectar la App con useContext
   const {state:{cart}} = useContext(AppContext); // para conectar la App con useContext se agrega cart para que en llamada no se agregue state.cart.length sino solo cart.length
 
   const handleToggle =()=>{
@@ -55,7 +57,7 @@ const Header = () => {
       <div className="navbar-right">
         <ul>
           <li className="navbar-email" onClick={handleToggle}>platzi@example.com</li>
-          <li className="navbar-shopping-cart">
+          <li className="navbar-shopping-cart" onClick={() => setToggleOrders(!toggleOrders)} > {/* al dar clic llama la funcion setToggleOrders, pero para no hacer una funcion, se pasa la logica alli mismo, para que cambie el valor si esta false al dar clic pase true y viceversa */} 
             {/* <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" /> */}
             <img src={IconShoppingCart} alt="shopping cart" />
            {/*  <div>2</div> */}
@@ -71,7 +73,7 @@ const Header = () => {
       </div>
       {/* validacion si el estado esta en true muestra el menu de lo contrario, no lo muestra */}
       {toggle  && <Menu /> } {/* si toggle es false no se muestra Menu */}
-      
+      {toggleOrders && <MyOrder />} {/* si toggle es false no se muestra MyOrders*/}
     </nav>
   );
 }

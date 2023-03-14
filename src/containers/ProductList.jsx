@@ -53,7 +53,7 @@ import '@styles/ProductList.scss'
 
         {/* LLamada del hook */}
         {products.map(product => (
-          <ProductItem product={product} key={product.id} />
+          <ProductItem product={product}  key={product.id} />
         ))} 
 
       </div>

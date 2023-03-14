@@ -6,7 +6,31 @@
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	background-color: var(--white);
+	 top: 60px;
+	bottom: 0; /* bottom: auto; */
+	border-radius: 30px;/* border-radius: 60px; */
+	border: 1px solid var(--very-light-pink); 
+
+	
+ 	 overflow-y: auto;  /* Recomiendo agregar scroll */
+	  height: 450px;   
+	/*  position: fixed; */
+ 	animation: swipeLeft 0.26s ease; //animacion
 }
+
+/* al hacer click ahora la barra lateral “crece” de derecha a izquierda. */
+ 
+@keyframes swipeLeft {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 360px;
+  }
+}  
+
+
 .title-container {
 	display: flex;
 }
