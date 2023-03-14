@@ -1,7 +1,8 @@
-import React, {useState} from 'react'; //useState es el Hook
+import React, {useState, useContext} from 'react'; //useState y useContext son Hooks 
 /* import '../styles/Header.scss' */
 import '@styles/Header.scss'; //ya agregado el alias en webapp.config
 import Menu from '@components/Menu';
+import AppContext from '../context/AppContext';
 /* import Logo from '../asset/logos/logo_yard_sale.svg';
 import IconMenu from '../asset/icons/icon_menu.svg'; */
 /* import IconShoppingCart from '../asset/icons/icon_shopping_cart.svg'; */
@@ -15,6 +16,8 @@ import  IconShoppingCart from  '@icons/icon_shopping_cart.svg'
 const Header = () => {
 
   const [toggle, setToggle] = useState(false); //const tiene 2 valores el 1er.valor que tiene el estado, 2valor modificar al 1er valor y useState es el valor inical o inicaliza el 1er.valor, tiene false para que no se visualise el menu. toggle es un nombre pero JS activa o desactiva al dar clic
+ /*  const {state} = useContext(AppContext); */// para conectar la App con useContext
+  const {state:{cart}} = useContext(AppContext); // para conectar la App con useContext se agrega cart para que en llamada no se agregue state.cart.length sino solo cart.length
 
   const handleToggle =()=>{
     setToggle(!toggle); //al dar clic llama a la funcion handleToggle y cambia el valor que tenia toggle
@@ -55,7 +58,14 @@ const Header = () => {
           <li className="navbar-shopping-cart">
             {/* <img src="./icons/icon_shopping_cart.svg" alt="shopping cart" /> */}
             <img src={IconShoppingCart} alt="shopping cart" />
-            <div>2</div>
+           {/*  <div>2</div> */}
+           {/* Conecta el estado con la app, lo que haga en productItem se vera reflejado en este componente  */}
+           {/* {state.cart.length > 0 ? <div>{state.cart.length}</div> : null }  */}{/* si en cart hay mas de 0 elementos, "?" entonces presentar el valor, ":" sino presentar nulo */}
+          {/*carrito se vea un “+9” cuando agregan más de 9 elementos, 
+             { state.cart.length > 0 && <div>{ state.cart.length > 9 ? '+9' : state.cart.length }</div> }
+          */}
+            {cart.length > 0 ? <div>{cart.length}</div> : null }  {/* antes: state.cart.length ahora: cart.length*/}
+          
           </li>
         </ul>
       </div>
