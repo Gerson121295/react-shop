@@ -4,7 +4,7 @@ import useGetProducts from '../hooks/useGetProducts'; // import del hook-  custo
 import '@styles/ProductList.scss'
 /* import axios from 'axios'; */ // parte del hook
 
- const API = 'http://api.escuelajs.co/api/v1/products';  //parte del hook 
+ const API = 'https://api.escuelajs.co/api/v1/products';  //parte del hook 
 
 // useEffect es un Hook para hacer peticiones a API y transmitirlos a nuestro componentes
 // Docs de la API 👉 https://api.escuelajs.co/docs/  API para desarrollo 👉 https://api.escuelajs.co/api/v1/
