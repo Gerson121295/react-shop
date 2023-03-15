@@ -30,7 +30,7 @@ const App = () => {
     /* Para poder proveer del contexto se utiliza el método provider del componente que hemos creado con el contexto (AppContext) */
     <AppContext.Provider value={initialState}> 
 
-    <BrowserRouter>
+    <BrowserRouter basename='/reactShop'>
       <Layout> {/* van a vivir los hijos de Layout */}
         <Routes> {/* Switch */}       
           <Route exact path="/" element={ <Home /> } /> 
