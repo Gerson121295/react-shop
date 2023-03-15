@@ -23,10 +23,19 @@ const MyOrder = () => {
 			</div>
 			<div className="my-order-content">
 				{/* Logica para iterar por cada item que se agrega */}
-				{cart.map(product => ( //recibe 1 producto
+				{/* {cart.map(product => ( //recibe 1 producto
 				<OrderItem product={product} key={`orderItem-${product.id}`}/>	 //muestra el producto key tendra cocatenado: orderItem con product.id asi evitar posibles fallas ya que ateriormente se ha usado product id, es mas especifico
+				))} */}
 
-				))}
+				{/* Arregla al eliminar un producto repetido no se elimina los 2 si solo el que tiene el id que es el index */}
+				{cart.map((product, index) => ( //recibe 1 producto
+				<OrderItem 
+					indexValue={index}
+					key={index}
+					product={product}
+				
+				/>	 //muestra el producto key tendra cocatenado: orderItem con product.id asi evitar posibles fallas ya que ateriormente se ha usado product id, es mas especifico
+				))} 
 
 				<div className="order">
 					<p>
